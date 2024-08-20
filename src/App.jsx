@@ -45,13 +45,11 @@ const pizzaData = [
 ]
 export default function App() {
   return (
-    <>
-      <div className="container">
-        <Header />
-        <Menu />
-        <Footer />
-      </div>
-    </>
+    <div className="container">
+      <Header />
+      <Menu />
+      <Footer />
+    </div>
   )
 }
 
@@ -75,11 +73,17 @@ function Menu() {
         <h2>Our menu</h2>
 
         {numPizzas > 0 ? (
-          <ul className="pizzas">
-            {pizzas.map((pizza) => (
-              <Pizza pizzaObj={pizza} key={pizza.name} />
-            ))}
-          </ul>
+          <>
+            <p>
+              Authentic Italian cuisine. 6 creative dishes yo choose from. ALl
+              from our stone ovenm all organic, all delicious.
+            </p>
+            <ul className="pizzas">
+              {pizzas.map((pizza) => (
+                <Pizza pizzaObj={pizza} key={pizza.name} />
+              ))}
+            </ul>
+          </>
         ) : (
           <p>We're still working on our menu. Please come back later :)</p>
         )}
